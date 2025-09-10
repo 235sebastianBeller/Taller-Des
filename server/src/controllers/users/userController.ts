@@ -16,6 +16,13 @@ class UserController {
   async registerUserController(req: Request, res: Response): Promise<void> {
     const { email, groupid, role } = req.body;
 
+    if(role === "admin" ){
+      res.status(400).json({
+        error: "No puedes registrarte como admin",
+      });
+      return;
+    }
+
     if (!email || !groupid || !role) {
       res.status(400).json({
         error: "Debes proporcionar un email, grupo y rol validos",
