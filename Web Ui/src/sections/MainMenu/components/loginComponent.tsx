@@ -60,6 +60,7 @@ export default function LoginComponent() {
             src={authData[0].userProfilePic}
             alt="Profile Picture"
             className="profilePicture"
+            title={authData[0].userEmail}
           />
         </React.Fragment>
       )}
